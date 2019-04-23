@@ -14,6 +14,7 @@ char* toSpace(char* sentence){
 	return sentence;
 }
 
+
 //counts number of words in sentence
 int wordCount(char* sentence){
 	int count = 0;
@@ -44,6 +45,7 @@ char** makeArr(char* sentence, int numWords){
 	return arr2;
 }
 
+
 //traverse through array of words
 void traverse(char** arr, int numWords){
 	int i;
@@ -52,6 +54,7 @@ void traverse(char** arr, int numWords){
 	}
 }
 
+
 //swaps values between two indexes
 char** swap(char** words, int index1, int index2){
 	char* temp = words[index1];
@@ -59,6 +62,7 @@ char** swap(char** words, int index1, int index2){
 	words[index2] = temp;
 	return words;
 }
+
 
 //sorts character by character. swaps when finds greater character
 char** sort(char** words, int numWords){
@@ -94,6 +98,7 @@ char** sort(char** words, int numWords){
 	return words;
 }
 
+
 int main(int argc, char** argv){
 	//seems to work. test it!!!!
 	if(argc != 2){
@@ -101,18 +106,11 @@ int main(int argc, char** argv){
 		return 0;
 	} 
 
-	//testing with fprintf(stderr...) uncomment this if it doesn't work 
-	
-	//if(argc != 2){
-	//	printf("Fatal Error: Found %d arguments, was expecting 1\nUsage: ./pointersorter \"inputstring\"\n\n", argc-1);
-	//	return 0;
-	//}
 	int charSize = strlen(argv[1]);
 	char* sentence = (char*) malloc(argc * charSize* sizeof(char));
 	strcat(sentence, argv[1]);
 	strcat(sentence, " ");
 	sentence = toSpace(sentence);
-
 
 	int numWords = wordCount(sentence);
 	if(numWords == 0){
@@ -122,8 +120,6 @@ int main(int argc, char** argv){
 	char** arr = makeArr(sentence, numWords);
 
 	
-
-
 	arr = sort(arr, numWords);
 
 	traverse(arr, numWords);
