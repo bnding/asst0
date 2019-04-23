@@ -1,0 +1,157 @@
+	When testing, I started off very basic and then made the same inputs more and more complex. I tested repeated words, same words with different upper/lower case letters, repeated non-alphabetic characters, special characters ($, ', ", etc.), repeated words, and inputs that will make the code print my error statement. The format of my input/output below should be
+
+./pointersorter inputstring
+output1
+output2
+...
+
+-----------------------------------------------------------------------------
+
+
+./pointersorter “One1two2three3”
+One
+two
+Three
+
+
+./pointersorter "one1two2three3"
+two
+three
+one
+
+
+./pointersorter “Thing1stuff3otherstuff,blarp”
+thing
+stuff
+otherstuff
+blarp
+
+
+./pointersorter “thing1stuff    otherstuff,blarp”
+thing
+stuff
+otherstuff
+blarp
+
+
+./pointersorter "the[][][]quick 123bro;wn9999 1212 [];;; f0x"
+x
+wn
+the
+quick
+f
+bro
+
+
+./pointersorter "HE#L#O MY@@@@NAME        IS@#$ %^&*( BONING"
+O
+NAME
+MY
+L
+IS
+HE
+BONING
+
+
+./pointersorter "Cat cat zebra Apple ZZZ ZZZa"
+ZZZa
+ZZZ
+Cat
+Apple
+zebra
+cat
+
+
+./pointersorter "aand, aAnd, Aand,AAnd"
+AAnd
+Aand
+aAnd
+aand
+
+
+./pointersorter “a aa aaa aaaa”
+aaaa
+aaa
+aa
+a
+
+./pointersorter "a aA aaa aaaa"
+aA
+aaaa
+aaa
+a
+
+
+./pointersorter a aA aaa Aaaa"
+Aaaa
+aA
+aaa
+a
+
+
+./pointersorter "A aA aaa Aaaa"
+Aaaa
+A
+aA
+aaa
+
+
+./pointersorter "aaaa\$aaa123aa/A"
+A
+aaaa
+aaa
+aa
+
+
+./pointersorter "aaaa aaa aa A"
+A
+aaaa
+aaa
+aa
+
+
+./pointersorter "HeLLo mY na@ME is,,, BOn3iNG@MEE@HELLo[]HeLLO"
+MEE
+ME
+HELLo
+HeLLO
+HeLLo
+BOn
+na
+mY
+iNG
+is
+
+
+./pointersorter "A B C a b c"
+C
+B
+A
+c
+b
+a
+
+
+./pointersorter "input\"with a quote"
+with
+quote
+input
+a
+
+
+./pointersorter “”
+Warning: No tokens found in input.
+
+
+./pointersorter "[][]"
+Warning: No tokens found in input.
+
+
+./pointersorter "[][]" asdf
+Fatal Error: Found 2 arguments, was expecting 1
+Usage: ./pointersorter "inputstring"
+
+
+./pointersorter "[][]" "123" "this will not work" asdf too many arguments 123
+Fatal Error: Found 8 arguments, was expecting 1
+Usage: ./pointersorter "inputstring"
